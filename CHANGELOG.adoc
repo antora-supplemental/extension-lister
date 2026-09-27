@@ -1,5 +1,9 @@
 = Changelog
 
+== Unreleased
+
+* Richer discovery: prefer `require(pkg).registryMeta` / `./registry` exports; strip `/antora` (and similar) subpaths; also scan `asciidoc.extensions` from the playbook.
+
 == 0.1.0 — 2026-09-27
 
 * Initial scaffold: metadata collect/normalize, footer + purpose + layer HTML layouts, `extensions.json`, registry self-meta, tests.

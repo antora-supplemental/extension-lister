@@ -69,4 +69,29 @@ describe('extension-lister collect', () => {
     ext.register.call({ on (e, fn) { handlers[e] = fn }, getLogger () { return { info () {} } } }, { config: {} })
     assert.equal(typeof handlers.sitePublished, 'function')
   })
+  it('reads registryMeta from required module and ./registry export', () => {
+    const { metaFromModule, stripRequirePath, readPackageMeta } = require('../lib/collect.js')
+    const fakeMod = function register () {}
+    fakeMod.registryMeta = {
+      name: 'Fake Ext',
+      packageName: '@scope/fake-ext',
+      purpose: 'testing',
+      layer: 'chassis',
+      lifecycleHooks: ['sitePublished'],
+    }
+    const fromMod = metaFromModule(fakeMod, { packageName: '@scope/fake-ext' })
+    assert.equal(fromMod.purpose, 'testing')
+    assert.equal(fromMod.layer, 'chassis')
+    assert.equal(fromMod.name, 'Fake Ext')
+
+    assert.equal(stripRequirePath('@antora-supplemental/mermaid-client/antora'), '@antora-supplemental/mermaid-client')
+    assert.equal(stripRequirePath('@antora-supplemental/link-validator'), '@antora-supplemental/link-validator')
+
+    // Self package exposes ./registry — readPackageMeta should prefer it when resolvable
+    const selfMeta = readPackageMeta('@antora-supplemental/extension-lister', {
+      paths: [require('node:path').join(__dirname, '..')],
+    })
+    assert.equal(selfMeta.purpose, 'registry')
+    assert.equal(selfMeta.packageName, '@antora-supplemental/extension-lister')
+  })
 })

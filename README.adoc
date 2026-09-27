@@ -23,10 +23,10 @@ Fields:
 |Field |Meaning
 
 |`purpose`
-|Capability tag (`link-validation`, `link-ux`, `registry`, `nav`, …)
+|Capability tag (`link-validation`, `link-ux`, `registry`, `nav`, â€¦)
 
 |`layer` / `chassis`
-|Car metaphor: `engine` · `chassis` · `body-kit` · `paint` · `bolt-on` (see https://github.com/antora-supplemental/antora-ui-chassis[antora-ui-chassis] layering)
+|Car metaphor: `engine` Â· `chassis` Â· `body-kit` Â· `paint` Â· `bolt-on` (see https://github.com/antora-supplemental/antora-ui-chassis[antora-ui-chassis] layering)
 
 |`pipeline` / `asciidoctor`
 |Where it plugs in
@@ -35,7 +35,7 @@ Fields:
 |e.g. `sitePublished`, `contentClassified`
 
 |`processorSubtypes`
-|When Asciidoctor: tree / inline / block / …
+|When Asciidoctor: tree / inline / block / â€¦
 |===
 
 == Install
@@ -56,6 +56,35 @@ antora:
       # packages: ['@antora-supplemental/link-validator', ...]  # optional explicit list
 ----
 
+== DESIGN: registry filters
+
+Catalog UIs (extension-lister locally; https://github.com/antora-supplemental/antora-extensions-registry[antora-extensions-registry] on the web) should filter listings by:
+
+[cols="1,3"]
+|===
+|Filter |Meaning
+
+|`antora.extensions`
+|Pipeline / site-generator extensions (`playbook.antora.extensions`). Typically `pipeline: true`.
+
+|`asciidoc.extensions` / Asciidoctor
+|Processor extensions (`playbook.asciidoc.extensions`). Mark `asciidoctor: true`.
+
+|Lifecycle hooks
+|e.g. `sitePublished`, `contentClassified`, `documentsConverted` — from `lifecycleHooks`.
+
+|Asciidoctor subtypes
+|When `asciidoctor: true`: `processorSubtypes` such as `tree`, `inline`, `block`, `include`, `postprocessor`.
+
+|Chassis layer
+|`engine` · `chassis` · `body-kit` · `paint` · `bolt-on`.
+
+|Purpose
+|Capability tag (`link-validation`, `link-ux`, `registry`, `nav`, …).
+|===
+
+Themes (`ui.bundle`) are **not** Antora extensions; keep them in a separate catalog category.
+
 == Contact
 
-https://github.com/AMDphreak[Ryan Johnson] · support@devcentr.org
+https://github.com/AMDphreak[Ryan Johnson] Â· support@devcentr.org
