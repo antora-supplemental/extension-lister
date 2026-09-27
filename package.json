@@ -1,0 +1,51 @@
+{
+  "name": "@antora-supplemental/extension-lister",
+  "version": "0.1.0",
+  "description": "Antora extension: list installed supplemental extensions by purpose / chassis layer (footer + grouped layouts)",
+  "license": "MIT",
+  "author": "Ryan Johnson (https://github.com/AMDphreak)",
+  "keywords": [
+    "antora",
+    "antora-extension",
+    "registry",
+    "extension-lister"
+  ],
+  "homepage": "https://github.com/antora-supplemental/extension-lister",
+  "bugs": {
+    "url": "https://github.com/antora-supplemental/extension-lister/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antora-supplemental/extension-lister.git"
+  },
+  "main": "lib/extension.js",
+  "exports": {
+    ".": "./lib/extension.js",
+    "./package.json": "./package.json",
+    "./collect": "./lib/collect.js",
+    "./registry": "./lib/registry-meta.js"
+  },
+  "files": [
+    "lib/**/*",
+    "ui/**/*",
+    "README.adoc",
+    "CHANGELOG.adoc",
+    "LICENSE",
+    "antora-registry.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "peerDependencies": {
+    "@antora/site-generator": ">=3.1.0"
+  },
+  "peerDependenciesMeta": {
+    "@antora/site-generator": {
+      "optional": true
+    }
+  },
+  "packageManager": "pnpm@10.33.0"
+}

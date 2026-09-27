@@ -1,0 +1,5 @@
+= Changelog
+
+== 0.1.0 — 2026-09-27
+
+* Initial scaffold: metadata collect/normalize, footer + purpose + layer HTML layouts, `extensions.json`, registry self-meta, tests.

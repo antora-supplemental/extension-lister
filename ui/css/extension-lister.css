@@ -1,0 +1,9 @@
+.ext-lister { font-family: system-ui, sans-serif; font-size: 0.9rem; }
+.ext-lister-footer { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; align-items: baseline; }
+.ext-lister-footer ul { display: flex; flex-wrap: wrap; gap: 0.35rem 0.85rem; list-style: none; margin: 0; padding: 0; }
+.ext-lister-title { font-weight: 600; margin-right: 0.5rem; }
+.ext-lister-grouped { margin: 1rem 0; }
+.ext-lister-group { margin-bottom: 1rem; }
+.ext-lister-group h3 { margin: 0 0 0.35rem; font-size: 1rem; text-transform: capitalize; }
+.ext-lister-group ul { margin: 0; padding-left: 1.1rem; }
+.ext-lister-meta { margin-left: 0.5rem; color: #71717a; font-size: 0.85em; }
