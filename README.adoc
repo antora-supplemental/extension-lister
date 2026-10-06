@@ -23,10 +23,10 @@ Fields:
 |Field |Meaning
 
 |`purpose`
-|Capability tag (`link-validation`, `link-ux`, `registry`, `nav`, â€¦)
+|Capability tag (`link-validation`, `link-ux`, `registry`, `nav`, …)
 
 |`layer` / `chassis`
-|Car metaphor: `engine` Â· `chassis` Â· `body-kit` Â· `paint` Â· `bolt-on` (see https://github.com/antora-supplemental/antora-ui-chassis[antora-ui-chassis] layering)
+|Car metaphor: `engine` · `chassis` · `body-kit` · `paint` · `bolt-on` (see https://github.com/antora-supplemental/antora-ui-chassis[antora-ui-chassis] layering)
 
 |`pipeline` / `asciidoctor`
 |Where it plugs in
@@ -35,7 +35,7 @@ Fields:
 |e.g. `sitePublished`, `contentClassified`
 
 |`processorSubtypes`
-|When Asciidoctor: tree / inline / block / â€¦
+|When Asciidoctor: tree / inline / block / …
 |===
 
 == Install
@@ -87,4 +87,4 @@ Themes (`ui.bundle`) are **not** Antora extensions; keep them in a separate cata
 
 == Contact
 
-https://github.com/AMDphreak[Ryan Johnson] Â· support@devcentr.org
+https://github.com/AMDphreak[Ryan Johnson] · support@devcentr.org
